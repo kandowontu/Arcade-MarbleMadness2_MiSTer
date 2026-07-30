@@ -116,8 +116,10 @@ always_comb begin
 		end
 
 		if (y_budget != 12'sd0) begin
-			joystick_out[2] = (y_budget > 12'sd0); // down
-			joystick_out[3] = (y_budget < 12'sd0); // up
+			// MiSTer's relative mouse Y follows the PS/2 convention:
+			// positive motion is up and negative motion is down.
+			joystick_out[2] = (y_budget < 12'sd0); // down
+			joystick_out[3] = (y_budget > 12'sd0); // up
 		end
 	end
 end

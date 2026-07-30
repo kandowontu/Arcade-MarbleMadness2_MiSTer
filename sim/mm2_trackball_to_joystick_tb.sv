@@ -76,18 +76,18 @@ initial begin
 	reset = 1'b0;
 	@(posedge clk);
 
-	send_packet(8'sd16, -8'sd8, 3'b001);
+	send_packet(8'sd16, 8'sd8, 3'b001);
 	require(joystick_out[10], "ordinary Start input is preserved");
 	require(!joystick_out[0] && !joystick_out[3],
 		"disabled trackball does not drive directions");
 	require(!joystick_out[4], "disabled trackball does not map mouse buttons");
 
 	enable = 1'b1;
-	send_packet(8'sd16, -8'sd8, 3'b001);
+	send_packet(8'sd16, 8'sd8, 3'b001);
 	require(joystick_out[0] && !joystick_out[1],
 		"positive X drives right only");
 	require(joystick_out[3] && !joystick_out[2],
-		"negative Y drives up only");
+		"positive Y drives up only");
 	require(joystick_out[4], "left mouse button drives Action/Start");
 
 	next_frame();
@@ -97,9 +97,9 @@ initial begin
 	require(!joystick_out[0] && !joystick_out[1],
 		"X motion budget drains without a stuck direction");
 
-	send_packet(-8'sd12, 8'sd12, 3'b010);
+	send_packet(-8'sd12, -8'sd12, 3'b010);
 	require(joystick_out[1] && joystick_out[2],
-		"negative X and positive Y map to left and down");
+		"negative X and negative Y map to left and down");
 	require(joystick_out[11], "right mouse button drives Coin");
 
 	@(negedge clk);

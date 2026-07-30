@@ -1,9 +1,14 @@
-# Marble Madness II MiSTer v1.0.0
+# Marble Madness II MiSTer v1.0.1
 
-First hardware-validated release of the Marble Madness II prototype core for
-MiSTer.
+Maintenance release of the hardware-validated Marble Madness II prototype
+core for MiSTer.
 
-## Highlights
+## Fixes
+
+- Corrected the Player-1 USB trackball/mouse Y-axis direction so upward
+  physical motion generates Up and downward physical motion generates Down.
+
+## Included features
 
 - Working attract mode, Coin, Start, gameplay controls, music, and effects on
   a physical MiSTer DE10-Nano.
