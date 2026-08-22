@@ -1,7 +1,15 @@
-# Marble Madness II MiSTer v1.0.1
+# Marble Madness II MiSTer v1.0.2
 
-Maintenance release of the hardware-validated Marble Madness II prototype
-core for MiSTer.
+Updater-submission release of the hardware-validated Marble Madness II
+prototype core for MiSTer. The FPGA image is unchanged from v1.0.1.
+
+## Distribution changes
+
+- Added the standard `releases/` directory required for MiSTer integration.
+- Added the dated `Arcade-MarbleMadness2_20260730.rbf` release image.
+- Placed the primary MRA directly in `releases/`.
+- Packaged the install ZIP with `_Arcade` at the archive root so it can be
+  extracted directly to `/media/fat`.
 
 ## Fixes
 

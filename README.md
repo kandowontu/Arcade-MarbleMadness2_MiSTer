@@ -23,8 +23,9 @@ No game ROMs are included.
 
 ## Install
 
-Copy the ROM-free release files and your legally obtained MAME ROM set to
-these exact paths:
+The ROM-free updater artifacts are kept in `releases/` using the standard
+MiSTer arcade-core naming convention. For a manual installation, copy the
+release files and your legally obtained MAME ROM set to these exact paths:
 
 ```text
 /media/fat/_Arcade/Marble Madness II (prototype).mra
@@ -99,6 +100,10 @@ powershell -ExecutionPolicy Bypass -File tools\test_real_rom.ps1
 
 The generated MiSTer image is
 `output_files\MarbleMadness2.rbf`.
+
+For an updater release, copy the generated image to `releases/` as
+`Arcade-MarbleMadness2_YYYYMMDD.rbf`. Keep the primary MRA directly in that
+same directory. The repository intentionally does not contain game ROMs.
 
 ## ROM layout
 
