@@ -63,7 +63,7 @@ Exit criterion: music, samples, and command handshakes match MAME traces.
 - [x] Implement 2816 unlock/write behavior.
 - [x] Map three players, service input, action/start buttons, and DIP switches.
 - [x] Validate Coin, Start, directions, gameplay, music, and effects on MiSTer.
-- [x] Expose Service/Test through the OSD and controller remapping.
+- [x] Expose Service/Test through the OSD without promoting it as a gameplay binding.
 - [x] Add default-on Player-1 USB trackball/mouse compatibility.
 - [x] Add MiSTer `.EEP` load and explicit save-back plumbing.
 - [x] Implement the sound-reset latch; retain MAME's deliberate watchdog NOP.

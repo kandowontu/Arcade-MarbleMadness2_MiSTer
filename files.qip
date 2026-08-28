@@ -23,5 +23,5 @@ set_global_assignment -name SYSTEMVERILOG_FILE rtl/fx68k/hdl/fx68kAlu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/fx68k/hdl/uaddrPla.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/mm2_cpu_subsystem.sv
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/mm2_core.sv
-set_global_assignment -name SDC_FILE MarbleMadness2.sdc
-set_global_assignment -name SYSTEMVERILOG_FILE MarbleMadness2.sv
+set_global_assignment -name SDC_FILE Arcade-MarbleMadness2.sdc
+set_global_assignment -name SYSTEMVERILOG_FILE Arcade-MarbleMadness2.sv

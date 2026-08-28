@@ -194,7 +194,9 @@ wire       rom_ready;
 logic      vblank_d;
 wire       frame_tick = vblank && !vblank_d;
 wire [15:0] p1_controls;
-wire        service_input = status[4] | joystick_0[9];
+// Keep Service/Test in the dedicated OSD control. Exposing it as a normal
+// gameplay binding makes MiSTer promote it alongside frequently used buttons.
+wire        service_input = status[4];
 
 always_ff @(posedge clk_sys) begin
 	if (reset)

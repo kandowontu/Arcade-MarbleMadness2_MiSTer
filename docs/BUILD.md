@@ -7,7 +7,7 @@
 - Icarus Verilog 11.0
 - Target board: MiSTer DE10-Nano
 - Target device: Intel/Altera Cyclone V SE `5CSEBA6U23I7`
-- Release build date: 2026-07-30
+- Release build date: 2026-08-27
 
 ## Verification
 
@@ -57,13 +57,13 @@ The release build completes with zero errors:
 
 ```powershell
 C:\intelFPGA_lite\17.0\quartus\bin64\quartus_sh.exe `
-  --flow compile MarbleMadness2 -c MarbleMadness2
+  --flow compile Arcade-MarbleMadness2 -c Arcade-MarbleMadness2
 ```
 
 | Resource | Used | Available | Utilization |
 |---|---:|---:|---:|
-| Logic utilization | 35,170 ALMs | 41,910 ALMs | 84% |
-| Registers | 34,663 | | |
+| Logic utilization | 35,034 ALMs | 41,910 ALMs | 84% |
+| Registers | 34,630 | | |
 | Block memory bits | 1,752,767 | 5,662,720 | 31% |
 | RAM blocks | 238 | 553 | 43% |
 | DSP blocks | 40 | 112 | 36% |
@@ -71,10 +71,10 @@ C:\intelFPGA_lite\17.0\quartus\bin64\quartus_sh.exe `
 
 Quartus reports positive timing slack:
 
-- setup: +0.252 ns overall;
-- hold: +0.184 ns;
-- recovery: +3.598 ns;
-- removal: +0.640 ns;
+- setup: +0.066 ns overall;
+- hold: +0.245 ns;
+- recovery: +3.503 ns;
+- removal: +0.677 ns;
 - minimum pulse width: +0.396 ns.
 
 The standard MiSTer framework constraints do not fully constrain every
@@ -90,23 +90,23 @@ and the running core name was `marblmd2`. Earlier hardware validation on the
 same implementation established working Coin, Start, directions, gameplay,
 music, and effects.
 
-Service/Test is exposed both as an OSD toggle and a remappable controller
-input. Player-1 USB trackball/mouse compatibility is default-on and has a
+Service/Test is exposed as an OSD toggle without an ordinary controller
+binding. Player-1 USB trackball/mouse compatibility is default-on and has a
 focused simulation; it translates relative motion into the digital joystick
 inputs used by the dumped prototype.
 
 ## Artifact
 
 ```text
-output_files\MarbleMadness2.rbf
-Size: 3,743,512 bytes
-SHA-256: C6866118B50B4F59BBECC1DBC736705717D6EFBB0E102F68DDE83D38812D4832
+output_files\Arcade-MarbleMadness2.rbf
+Size: 3,791,956 bytes
+SHA-256: 309B36DA49482B0CF95CD70725C69AB85F09931ACBF80895E11F939601859CBB
 ```
 
 No ROM data is present in the RBF, MRA, repository, or release package.
 
 ```text
-output_files\MarbleMadness2_MiSTer_v1.0.2.zip
-Size: 1,936,108 bytes
-SHA-256: D8173EF41EB3B5CE5B90F276FF578862247A8E34DFB330B2B301C9BF10ABFD42
+output_files\Arcade-MarbleMadness2_MiSTer_v1.0.3.zip
+Size: 1,934,965 bytes
+SHA-256: F9A49C9CF98E8AAD3D1BE9B3ADA6B434567F2356D12CEBB826E127D3C84C4ED0
 ```

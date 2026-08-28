@@ -29,7 +29,7 @@ release files and your legally obtained MAME ROM set to these exact paths:
 
 ```text
 /media/fat/_Arcade/Marble Madness II (prototype).mra
-/media/fat/_Arcade/cores/MarbleMadness2.rbf
+/media/fat/_Arcade/cores/Arcade-MarbleMadness2_YYYYMMDD.rbf
 /media/fat/games/mame/marblmd2.zip
 ```
 
@@ -45,7 +45,6 @@ expected by the core. Do not launch the RBF directly from `_Other`.
 | Action / A | Action and player Start |
 | Start | Player Start |
 | Coin / Select | Insert coin |
-| Service/Test | Momentary service input |
 
 The game labels each player's action button as that player's Start input.
 
@@ -67,10 +66,10 @@ Open the MiSTer OSD, choose **Controls**, and set **Service/Test mode** to
 **On**. Use directions to navigate and Action/Start to select. Set the option
 back to **Off** to return to ordinary operation.
 
-The Service/Test control can also be assigned in MiSTer's controller remap
-screen. This is a momentary input; the OSD toggle is more convenient for
-extended testing. MAME documents that the prototype itself can report service
-RAM-test issues, so a reported RAM failure is not necessarily an FPGA fault.
+Service/Test is intentionally available only through the OSD so it is not
+promoted as an ordinary gameplay binding. MAME documents that the prototype
+itself can report service RAM-test issues, so a reported RAM failure is not
+necessarily an FPGA fault.
 
 ## EEPROM
 
@@ -82,7 +81,7 @@ bookkeeping or test settings, choose **Save EEPROM** to write it back.
 Use Quartus Prime Lite 17.0.x with Cyclone V device support:
 
 ```powershell
-C:\intelFPGA_lite\17.0\quartus\bin64\quartus_sh.exe --flow compile MarbleMadness2
+C:\intelFPGA_lite\17.0\quartus\bin64\quartus_sh.exe --flow compile Arcade-MarbleMadness2
 ```
 
 Run the focused simulations with Icarus Verilog:
@@ -99,7 +98,7 @@ powershell -ExecutionPolicy Bypass -File tools\test_real_rom.ps1
 ```
 
 The generated MiSTer image is
-`output_files\MarbleMadness2.rbf`.
+`output_files\Arcade-MarbleMadness2.rbf`.
 
 For an updater release, copy the generated image to `releases/` as
 `Arcade-MarbleMadness2_YYYYMMDD.rbf`. Keep the primary MRA directly in that
