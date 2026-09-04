@@ -7,13 +7,14 @@
 - Icarus Verilog 11.0
 - Target board: MiSTer DE10-Nano
 - Target device: Intel/Altera Cyclone V SE `5CSEBA6U23I7`
-- Release build date: 2026-08-27
+- Release build date: 2026-09-04
 
 ## Verification
 
 The focused simulation suite passes:
 
 ```text
+mm2_video_timing_tb: PASS
 mm2_storage_reset_wiring: PASS
 mm2_address_decode_tb: PASS
 mm2_rom_layout_tb: PASS
@@ -62,8 +63,8 @@ C:\intelFPGA_lite\17.0\quartus\bin64\quartus_sh.exe `
 
 | Resource | Used | Available | Utilization |
 |---|---:|---:|---:|
-| Logic utilization | 35,034 ALMs | 41,910 ALMs | 84% |
-| Registers | 34,630 | | |
+| Logic utilization | 35,887 ALMs | 41,910 ALMs | 86% |
+| Registers | 34,688 | | |
 | Block memory bits | 1,752,767 | 5,662,720 | 31% |
 | RAM blocks | 238 | 553 | 43% |
 | DSP blocks | 40 | 112 | 36% |
@@ -71,10 +72,10 @@ C:\intelFPGA_lite\17.0\quartus\bin64\quartus_sh.exe `
 
 Quartus reports positive timing slack:
 
-- setup: +0.066 ns overall;
-- hold: +0.245 ns;
-- recovery: +3.503 ns;
-- removal: +0.677 ns;
+- setup: +0.444 ns overall;
+- hold: +0.168 ns;
+- recovery: +4.209 ns;
+- removal: +0.509 ns;
 - minimum pulse width: +0.396 ns.
 
 The standard MiSTer framework constraints do not fully constrain every
@@ -99,14 +100,14 @@ inputs used by the dumped prototype.
 
 ```text
 output_files\Arcade-MarbleMadness2.rbf
-Size: 3,791,956 bytes
-SHA-256: 309B36DA49482B0CF95CD70725C69AB85F09931ACBF80895E11F939601859CBB
+Size: 3,730,240 bytes
+SHA-256: 95FD48A670B2CF3065CCB66099C18BF4D4771BCEF951D5A76E173488F27D3B39
 ```
 
 No ROM data is present in the RBF, MRA, repository, or release package.
 
 ```text
-output_files\Arcade-MarbleMadness2_MiSTer_v1.0.3.zip
-Size: 1,934,965 bytes
-SHA-256: F9A49C9CF98E8AAD3D1BE9B3ADA6B434567F2356D12CEBB826E127D3C84C4ED0
+output_files\Arcade-MarbleMadness2_MiSTer_v1.0.4.zip
+Size: 1,921,270 bytes
+SHA-256: 5B3A9F3CDCBBCBE5BE045EBA653C3A2DFBB36949B6406A1C74BEF8ECBFB9DCD1
 ```

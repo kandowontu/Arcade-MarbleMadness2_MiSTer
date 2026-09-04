@@ -14,6 +14,8 @@ No game ROMs are included.
 - Cycle-compatible Motorola 68000 execution through the `fx68k` FPGA core.
 - Atari VAD playfield, scanline IRQ, scrolling, palette, SLIP-linked motion
   objects, and playfield/object priority mixing.
+- Independent CRT horizontal and vertical sync-position adjustments from
+  -8 through +7 pixels/lines without changing native game timing.
 - Atari JSA III audio with a T65 6502, JT51 YM2151, and JT6295 OKI MSM6295.
 - Three-player digital controls, Coin, Start/Action, Service/Test, DIP
   switches, and 2816-compatible EEPROM persistence.

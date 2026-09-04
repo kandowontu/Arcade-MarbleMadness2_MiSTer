@@ -41,6 +41,8 @@ mm2_video_timing video_timing
 (
 	.clk,
 	.reset,
+	.h_adjust(4'd0),
+	.v_adjust(4'd0),
 	.ce_pix,
 	.h_count,
 	.v_count,

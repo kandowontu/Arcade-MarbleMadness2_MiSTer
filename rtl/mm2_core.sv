@@ -12,6 +12,8 @@ module mm2_core
 	input  logic        reset,
 	input  logic        storage_reset,
 	input  logic        memory_ready,
+	input  logic [3:0]  crt_h_adjust,
+	input  logic [3:0]  crt_v_adjust,
 	input  logic        service,
 	input  logic [15:0] dip_switches,
 
@@ -59,6 +61,8 @@ mm2_video_timing video_timing
 (
 	.clk(clk),
 	.reset(reset),
+	.h_adjust(crt_h_adjust),
+	.v_adjust(crt_v_adjust),
 	.ce_pix(ce_pix),
 	.h_count(h_count),
 	.v_count(v_count),

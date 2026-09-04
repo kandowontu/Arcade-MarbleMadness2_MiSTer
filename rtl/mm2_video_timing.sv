@@ -9,6 +9,8 @@ module mm2_video_timing
 (
 	input  logic       clk,
 	input  logic       reset,
+	input  logic [3:0] h_adjust,
+	input  logic [3:0] v_adjust,
 	output logic       ce_pix,
 	output logic [8:0] h_count,
 	output logic [8:0] v_count,
@@ -29,6 +31,14 @@ localparam int V_SYNC_END   = 247;
 
 logic [2:0] pixel_div;
 assign ce_pix = (pixel_div == 3'd0);
+
+// MiSTer encodes these OSD choices as 4-bit two's-complement values:
+// 0..+7 followed by -8..-1. Only move the sync windows relative to the
+// unchanged active picture and blanking periods; game timing stays native.
+integer h_sync_start_adjusted;
+integer h_sync_end_adjusted;
+integer v_sync_start_adjusted;
+integer v_sync_end_adjusted;
 
 always_ff @(posedge clk) begin
 	if (reset) begin
@@ -54,10 +64,17 @@ always_ff @(posedge clk) begin
 end
 
 always_comb begin
+	h_sync_start_adjusted = H_SYNC_START + $signed(h_adjust);
+	h_sync_end_adjusted   = H_SYNC_END   + $signed(h_adjust);
+	v_sync_start_adjusted = V_SYNC_START + $signed(v_adjust);
+	v_sync_end_adjusted   = V_SYNC_END   + $signed(v_adjust);
+
 	hblank = (h_count >= H_VISIBLE);
-	hsync  = (h_count >= H_SYNC_START) && (h_count < H_SYNC_END);
+	hsync  = (h_count >= h_sync_start_adjusted)
+	      && (h_count <  h_sync_end_adjusted);
 	vblank = (v_count >= V_VISIBLE);
-	vsync  = (v_count >= V_SYNC_START) && (v_count < V_SYNC_END);
+	vsync  = (v_count >= v_sync_start_adjusted)
+	      && (v_count <  v_sync_end_adjusted);
 end
 
 endmodule

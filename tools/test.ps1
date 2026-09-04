@@ -51,6 +51,13 @@ Write-Host 'mm2_storage_reset_wiring: PASS'
 
 $tests = @(
 	@{
+		Name = 'mm2_video_timing_tb'
+		Files = @(
+			'sim\mm2_video_timing_tb.sv',
+			'rtl\mm2_video_timing.sv'
+		)
+	},
+	@{
 		Name = 'mm2_address_decode_tb'
 		Files = @(
 			'sim\mm2_address_decode_tb.sv',

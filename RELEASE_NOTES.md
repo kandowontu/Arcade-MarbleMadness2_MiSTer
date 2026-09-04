@@ -1,7 +1,16 @@
-# Marble Madness II MiSTer v1.0.3
+# Marble Madness II MiSTer v1.0.4
 
-Review-update release of the hardware-validated Marble Madness II prototype
+CRT-alignment update for the hardware-validated Marble Madness II prototype
 core for MiSTer.
+
+## CRT alignment
+
+- Added independent horizontal and vertical CRT sync adjustments.
+- Each control follows the standard MiSTer range: 0, +1 through +7, and -8
+  through -1.
+- Adjustments move only the outgoing sync windows; active video, blanking,
+  scanline interrupts, and native game timing are unchanged.
+- Added focused regression coverage for neutral and signed range endpoints.
 
 ## Review changes
 
