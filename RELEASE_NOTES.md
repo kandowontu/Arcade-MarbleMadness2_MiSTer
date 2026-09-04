@@ -49,8 +49,8 @@ Copy:
 ```text
 Marble Madness II (prototype).mra
     -> /media/fat/_Arcade/Marble Madness II (prototype).mra
-Arcade-MarbleMadness2_YYYYMMDD.rbf
-    -> /media/fat/_Arcade/cores/Arcade-MarbleMadness2_YYYYMMDD.rbf
+Arcade-MarbleMadness2.rbf
+    -> /media/fat/_Arcade/cores/Arcade-MarbleMadness2.rbf
 your legally obtained marblmd2.zip
     -> /media/fat/games/mame/marblmd2.zip
 ```

@@ -31,7 +31,7 @@ release files and your legally obtained MAME ROM set to these exact paths:
 
 ```text
 /media/fat/_Arcade/Marble Madness II (prototype).mra
-/media/fat/_Arcade/cores/Arcade-MarbleMadness2_YYYYMMDD.rbf
+/media/fat/_Arcade/cores/Arcade-MarbleMadness2.rbf
 /media/fat/games/mame/marblmd2.zip
 ```
 
@@ -103,7 +103,7 @@ The generated MiSTer image is
 `output_files\Arcade-MarbleMadness2.rbf`.
 
 For an updater release, copy the generated image to `releases/` as
-`Arcade-MarbleMadness2_YYYYMMDD.rbf`. Keep the primary MRA directly in that
+`Arcade-MarbleMadness2.rbf`. Keep the primary MRA directly in that
 same directory. The repository intentionally does not contain game ROMs.
 
 ## ROM layout

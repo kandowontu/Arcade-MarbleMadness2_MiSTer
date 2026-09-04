@@ -3,7 +3,7 @@
 	<setname>marblmd2</setname>
 	<year>1991</year>
 	<manufacturer>Atari Games</manufacturer>
-	<rbf>MarbleMadness2</rbf>
+	<rbf>Arcade-MarbleMadness2</rbf>
 	<rotation>horizontal</rotation>
 	<mameversion>288</mameversion>
 	<buttons default="A,Start,Select" names="Action/Start,-,-,-,-,-,Start,Coin,Pause"/>
